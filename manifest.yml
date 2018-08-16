@@ -5,6 +5,7 @@ applications:
     buildpack: sap_java_buildpack
     path: target/bp-0.0.1-SNAPSHOT.war  
     services:
-    - abc
+    - leaverequest-xsuaa
+    - leaverequest-destination
     env:
-      destinations: '[{name: "ODataEndPoint", url: "ODataServerURL", username: "UserID", password: "Password"}]'
+      ALLOW_MOCKED_AUTH_HEADER: 'true'

@@ -1,24 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  
-  <parent>
-	<groupId>com.sap.cloud.servicesdk.prov</groupId>
-	<artifactId>projects-parent-odatav2</artifactId>
-	<version>1.17.1</version>
-  </parent>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
 
-  <artifactId>bp</artifactId>
-  <groupId>com.deepdive12</groupId>
-  <version>0.0.1-SNAPSHOT</version>
+	<parent>
+		<groupId>com.sap.cloud.servicesdk.prov</groupId>
+		<artifactId>projects-parent-odatav2</artifactId>
+		<version>1.17.1</version>
+	</parent>
 
-  <packaging>war</packaging>
-  <name>bp</name>
+	<artifactId>bp</artifactId>
+	<groupId>com.deepdive12</groupId>
+	<version>0.0.1-SNAPSHOT</version>
 
-  <properties>
-    <packageName>com.deepdive12.bp</packageName>    
-  </properties>
+	<packaging>war</packaging>
+	<name>bp</name>
+
+	<properties>
+		<packageName>com.deepdive12.bp</packageName>
+	</properties>
 
 	<build>
 		<finalName>${project.artifactId}-${project.version}</finalName>
@@ -26,6 +27,27 @@
 			<resource>
 				<directory>src/main/resources</directory>
 			</resource>
-		</resources>		
-	</build>		
+		</resources>
+	</build>
+	<dependencies>
+		<!-- S4HANA SDK -->
+		<!-- https://mvnrepository.com/artifact/com.sap.cloud.s4hana/sdk-parent -->
+		<dependency>
+			<groupId>com.sap.cloud.s4hana</groupId>
+			<artifactId>sdk-parent</artifactId>
+			<version>2.1.2</version>
+			<type>pom</type>
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<!--<version>1.18.0</version> -->
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.inject</groupId>
+			<artifactId>javax.inject</artifactId>
+			<scope>provided</scope>
+		</dependency>
+	</dependencies>
 </project>
