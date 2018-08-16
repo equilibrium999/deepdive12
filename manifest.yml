@@ -1,0 +1,10 @@
+---
+applications:
+  - name: bp
+    memory: 512M
+    buildpack: sap_java_buildpack
+    path: target/bp-0.0.1-SNAPSHOT.war  
+    services:
+    - abc
+    env:
+      destinations: '[{name: "ODataEndPoint", url: "ODataServerURL", username: "UserID", password: "Password"}]'
